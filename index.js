@@ -10,7 +10,9 @@ const app =express();
 app.use(cors());
 
 app.use(urlencoded({extended:true}));
-
+app.get('/',(req,res)=>{
+  res.send("Ready to serve...")
+})
 app.get('/song', async (req, res) => {
     try {
       const q = req.query.q;
